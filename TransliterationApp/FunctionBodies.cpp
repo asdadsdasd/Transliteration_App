@@ -129,12 +129,15 @@ vector<vector<string>>decodes;
 vector<bool>upper;
 
 
-vector<string> decodeString(string& line, int pos) {
+vector<string> decodeString(string& line, int pos) 
+{
     if (decodes[pos].size() > 0)
         return decodes[pos];
-    else {
+    else 
+    {
         vector<string>res;
-        for (int len = 1; (len <= maxCombLen) && (pos + len <= line.size()); ++len) {
+        for (int len = 1; (len <= maxCombLen) && (pos + len <= line.size()); ++len) 
+        {
             vector<string>& curVars = decMap[line.substr(pos, len)],
                 leftVars = decodeString(line, pos + len);
             if (upper[pos])
@@ -150,25 +153,30 @@ vector<string> decodeString(string& line, int pos) {
 }
 
 
-char tolower(char ch) {
+char tolower(char ch) 
+{
     return static_cast<char>(tolower(static_cast<unsigned char>(ch)));
 }
 
-char toupper(char ch) {
+char toupper(char ch) 
+{
     return static_cast<char>(toupper(static_cast<unsigned char>(ch)));
 }
 
 
-string toupper(string line) {
+string toupper(string line) 
+{
     for (int i = 0; i < line.size(); ++i)
         line[i] = toupper(line[i]);
     return line;
 }
 
 
-string makeLow(string line) {
+string makeLow(string line) 
+{
     upper.resize(line.size());
-    for (int i = 0; i < line.size(); ++i) {
+    for (int i = 0; i < line.size(); ++i) 
+    {
         char c = tolower(line[i]);
         upper[i] = (c != line[i]);
         line[i] = c;

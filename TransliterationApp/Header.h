@@ -16,6 +16,8 @@ string inputFile(string fileName);
 
 vector<string> translit(string eng);
 
+vector<string> decodeString(string& line, int pos);
+
 void outputFile(vector<string> ru, string outputFileName);
 
 void setDecMap();
