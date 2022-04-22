@@ -101,5 +101,49 @@ namespace TestLibrary
 				Assert::AreEqual(1, 2);
 			}
 		}
+
+
+		TEST_METHOD(_makeLow)
+		{
+			setDecMap();
+			string line = "YOZHIK";
+			string exp_string = "yozhik";
+
+			string returnString = makeLow(line);
+			Assert::AreEqual(exp_string, returnString);
+		}
+
+
+		TEST_METHOD(_toupperString)
+		{
+			setDecMap();
+			string line = "yozhik";
+			string exp_string = "YOZHIK";
+
+			string returnString = toupper(line);
+			Assert::AreEqual(exp_string, returnString);
+		}
+
+
+		TEST_METHOD(_tolowerChar)
+		{
+			setDecMap();
+			char symbol = 'K';
+			char exp_symbol = 'k';
+
+			char returnChar = tolower(symbol);
+			Assert::AreEqual(exp_symbol, returnChar);
+		}
+
+
+		TEST_METHOD(_toupperChar)
+		{
+			setDecMap();
+			char symbol = 'k';
+			char exp_symbol = 'K';
+
+			char returnChar = toupper(symbol);
+			Assert::AreEqual(exp_symbol, returnChar);
+		}
 	};
 }

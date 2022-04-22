@@ -31,6 +31,9 @@ void setDecMap();
 string toupper(string line);
 
 
+string makeLow(string line);
+
+
 char toupper(char ch);
 
 
