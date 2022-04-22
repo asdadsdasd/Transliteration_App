@@ -5,6 +5,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+
 namespace TestLibrary
 {
 	TEST_CLASS(TestLibrary)
@@ -13,6 +14,7 @@ namespace TestLibrary
 		
 		TEST_METHOD(_translitMin)
 		{
+			setDecMap();
 			string eng = "q";
 			vector<string> exp_string{ "ку" };
 
@@ -29,6 +31,7 @@ namespace TestLibrary
 
 		TEST_METHOD(_translitMedium)
 		{
+			setDecMap();
 			string eng = "qqqqq";
 			vector<string> exp_string{ "кукукукуку" };
 
@@ -43,8 +46,10 @@ namespace TestLibrary
 			}
 		}
 
+
 		TEST_METHOD(_translitMax)
 		{
+			setDecMap();
 			string eng = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
 			vector<string> exp_string{ "кукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукукуку" };
 
@@ -59,8 +64,9 @@ namespace TestLibrary
 			}
 		}
 
-		TEST_METHOD(_multipleTranslit)
+		TEST_METHOD(_multipleTranslitTwoVariants)
 		{
+			setDecMap();
 			string eng = "ezhik";
 			vector<string> exp_string{ "езхик", "ежик" };
 
@@ -75,10 +81,11 @@ namespace TestLibrary
 			}
 		}
 
-		TEST_METHOD(_multipleTranslitqwe)
+		TEST_METHOD(_multipleTranslitFourVariants)
 		{
+			setDecMap();
 			string eng = "yozhik";
-			vector<string> exp_string{ "йозхик", "йозхик", "ёзхик", "ёжик" };
+			vector<string> exp_string{ "йозхик", "йожик", "ёзхик", "ёжик" };
 
 			vector<string> returnString = translit(eng);
 			if (exp_string == returnString)
