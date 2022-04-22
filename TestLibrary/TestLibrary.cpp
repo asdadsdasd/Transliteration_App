@@ -12,6 +12,7 @@ namespace TestLibrary
 	{
 	public:
 		
+
 		TEST_METHOD(_translitMin)
 		{
 			setDecMap();
@@ -28,6 +29,7 @@ namespace TestLibrary
 				Assert::AreEqual(1, 2);
 			}
 		}
+
 
 		TEST_METHOD(_translitMedium)
 		{
@@ -64,6 +66,7 @@ namespace TestLibrary
 			}
 		}
 
+
 		TEST_METHOD(_multipleTranslitTwoVariants)
 		{
 			setDecMap();
@@ -80,6 +83,7 @@ namespace TestLibrary
 				Assert::AreEqual(1, 2);
 			}
 		}
+
 
 		TEST_METHOD(_multipleTranslitFourVariants)
 		{
